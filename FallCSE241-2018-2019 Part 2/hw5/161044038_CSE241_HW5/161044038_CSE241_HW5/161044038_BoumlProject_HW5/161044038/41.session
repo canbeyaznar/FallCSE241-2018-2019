@@ -1,0 +1,12 @@
+window_sizes 1600 837 375 1220 685 104
+
+diagrams
+  active  classdiagram_ref 128041 // View
+    1220 685 123 A4 600 0
+end
+show_stereotypes
+selected class_ref 128937 // PolygonVect
+open
+  classview_ref 128041 // proje
+end
+end

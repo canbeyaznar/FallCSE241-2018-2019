@@ -1,0 +1,23 @@
+ <svg version=" 1.1 " baseProfile=" full "
+ xmlns="http://www.w3.org/2000/svg">
+
+<rect width="200" height="100" stroke="black" stroke-width="0.5" fill="red"/>
+
+<rect x="0" y="0" width="70" height="30" stroke="black" stroke-width="0.5" fill="green"/>
+
+<rect x="70" y="0" width="70" height="30" stroke="black" stroke-width="0.5" fill="green"/>
+
+<rect x="0" y="30" width="70" height="30" stroke="black" stroke-width="0.5" fill="green"/>
+
+<rect x="70" y="30" width="70" height="30" stroke="black" stroke-width="0.5" fill="green"/>
+
+<rect x="0" y="60" width="70" height="30" stroke="black" stroke-width="0.5" fill="green"/>
+
+<rect x="70" y="60" width="70" height="30" stroke="black" stroke-width="0.5" fill="green"/>
+
+<rect x="140" y="0" width="30" height="70" stroke="black" stroke-width="0.5" fill="green"/>
+
+<rect x="170" y="0" width="30" height="70" stroke="black" stroke-width="0.5" fill="green"/>
+
+
+</svg>

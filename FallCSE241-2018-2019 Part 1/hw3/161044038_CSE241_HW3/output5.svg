@@ -1,0 +1,29 @@
+ <svg version=" 1.1 " baseProfile=" full "
+width="100%" height="100%" 
+ xmlns="http://www.w3.org/2000/svg">
+
+<circle cx="102" cy="102" r="100" stroke="black" stroke-width="0.5" fill="red"/>
+<circle cx="100" cy="17" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="65" cy="25" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="134" cy="25" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="162" cy="45" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="37" cy="46" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="89" cy="50" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="123" cy="58" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="61" cy="71" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="178" cy="75" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="21" cy="76" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="98" cy="83" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="145" cy="84" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="45" cy="101" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="120" cy="109" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="169" cy="109" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="78" cy="111" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="22" cy="127" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="144" cy="134" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="55" cy="137" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="100" cy="137" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="124" cy="162" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+<circle cx="77" cy="163" r="17" stroke="black" stroke-width="0.5" fill="green"/>
+
+</svg>

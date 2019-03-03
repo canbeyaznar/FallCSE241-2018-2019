@@ -1,0 +1,70 @@
+class Circle
+!!!128809.java!!!	Circle()
+		radius=0;
+		Loc_X=0;
+		Loc_Y=0;
+		area=0;
+		perimeter=0;
+!!!128937.java!!!	Circle(in inputRadius : double)
+		radius=inputRadius;
+		Loc_X=inputRadius;
+		Loc_Y=inputRadius;
+		area= Math.PI*radius*radius;
+		perimeter = Math.PI*2*radius;
+!!!129065.java!!!	Circle(in inputRadius : double, in inputLocX : double, in inputLocY : double)
+		radius=inputRadius;
+		Loc_X=inputLocX;
+		Loc_Y=inputLocY;
+		area= Math.PI*radius*radius;
+		perimeter = Math.PI*2*radius;
+!!!129193.java!!!	Circle(inout tempCircle : Circle)
+		radius=tempCircle.radius;
+		Loc_X=tempCircle.Loc_X;
+		Loc_Y=tempCircle.Loc_Y;
+		area=tempCircle.area;
+		perimeter=tempCircle.area;
+		Color=tempCircle.Color;
+!!!129321.java!!!	setRadius(in inputRadius : double) : void
+		radius=inputRadius;
+!!!129449.java!!!	getRadius() : double
+		return radius;
+!!!129577.java!!!	getLocX() : double
+		return Loc_X;
+!!!129705.java!!!	getLocY() : double
+		return Loc_Y;
+!!!129833.java!!!	setLoc_X(in locX : double) : void
+		Loc_X = locX;
+!!!129961.java!!!	setLoc_Y(in locY : double) : void
+		Loc_Y = locY;
+!!!130089.java!!!	area() : double
+		return area;
+!!!130217.java!!!	perimeter() : double
+		return perimeter;
+!!!130345.java!!!	increment() : Shape
+		
+		++Loc_X;
+		++Loc_Y;
+		return this;
+		
+!!!130473.java!!!	decrement() : Shape
+		
+		if( !( (Loc_X-1)<0 | (Loc_Y-1)<0 ) )
+		{
+			--Loc_X;
+			--Loc_Y;
+		}
+		return this;
+!!!130601.java!!!	getColor() : String
+		return Color;
+!!!130729.java!!!	draw(inout g : Graphics) : void
+		
+		paintComponent(g);
+!!!130857.java!!!	paintComponent(inout g : Graphics) : void
+		
+		super.paintComponent(g);
+		g.drawOval((int)Loc_X-(int)radius, (int)Loc_Y-(int)radius, (int)radius*2, (int)radius*2);
+		
+!!!130985.java!!!	compare(inout o1 : Shape, inout o2 : Shape) : int
+		if(o1.area()==o2.area())
+			return 1;
+		return 0;

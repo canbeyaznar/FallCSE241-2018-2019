@@ -1,0 +1,125 @@
+class Triangle
+!!!141225.java!!!	Triangle()
+		Edge=0;
+		Height=0;
+		Loc_X=0;
+		Loc_Y=0;
+		area=0;
+		perimeter= 0;
+		rotate=0;
+!!!141353.java!!!	Triangle(in inputWidth : double)
+		Edge=inputWidth;
+		Height=(1.732*Edge/2);
+		Loc_X=Edge/2;
+		Loc_Y=0;
+		area = (Edge*Height)/2;
+		perimeter =  3* Edge;
+		rotate=0;
+!!!141481.java!!!	Triangle(in inputWidth : double, in inputHeight : double)
+		Edge=inputWidth;
+		Height=inputHeight;
+		Loc_X=0;
+		Loc_Y=0;
+		area = (Edge*Height)/2;
+		perimeter =  3* Edge;
+		rotate=0;
+!!!141609.java!!!	Triangle(in inputWidth : double, in inputHeight : double, in inputLocX : double, in inputLocY : double)
+		Edge=inputWidth;
+		Height=inputHeight;
+		Loc_X=inputLocX;
+		Loc_Y=inputLocY;
+		area = (Edge*Height)/2;
+		perimeter =  3* Edge;
+		rotate=0;
+!!!141737.java!!!	Triangle(inout tempTriangle : Triangle)
+		Edge=tempTriangle.Edge;
+		Height=tempTriangle.Height;
+		Loc_X=tempTriangle.Loc_X;
+		Loc_Y=tempTriangle.Loc_Y;
+		Color=tempTriangle.Color;
+		area = (Edge*Height)/2;
+		perimeter =  3* Edge;
+		rotate=tempTriangle.getRotate();
+!!!141865.java!!!	setEdge(in inputWidth : double) : void
+		Edge=inputWidth;
+!!!141993.java!!!	getEdge() : double
+		return Edge;
+!!!142121.java!!!	setHeight(in inputHeight : double) : void
+		Height=inputHeight;
+!!!142249.java!!!	getHeight() : int
+		return (int)Height;
+!!!142377.java!!!	getLocX() : double
+		return Loc_X;
+!!!142505.java!!!	getLocY() : double
+		return Loc_Y;
+!!!142633.java!!!	setLoc_X(in locX : double) : void
+		Loc_X = locX;
+!!!142761.java!!!	setLoc_Y(in locY : double) : void
+		Loc_Y = locY;
+!!!142889.java!!!	setRotate(in num : int) : void
+		rotate=num;
+!!!143017.java!!!	getRotate() : int
+		return rotate;
+!!!143145.java!!!	area() : double
+		return area;
+!!!143273.java!!!	perimeter() : double
+		return perimeter;
+!!!143401.java!!!	increment() : Shape
+		
+		++Loc_X;
+		++Loc_Y;
+		return this;
+		
+!!!143529.java!!!	decrement() : Shape
+		
+		if( !( (Loc_X-1)<0 | (Loc_Y-1)<0 ) )
+		{
+			--Loc_X;
+			--Loc_Y;
+		}
+		return this;
+!!!143657.java!!!	getColor() : String
+		return Color;
+!!!143785.java!!!	draw(inout g : Graphics) : void
+		
+		paintComponent(g);
+!!!143913.java!!!	paintComponent(inout g : Graphics) : void
+		
+		super.paintComponent(g);
+		
+		Triangle tempTriangle = new Triangle(this);
+		
+		int[] xPoints = new int[3];
+		int[] yPoints = new int[3];
+		
+		if(tempTriangle.getRotate()==0)
+		{
+			xPoints[0]=(int)(tempTriangle.getLocX());
+			yPoints[0]=	(int)(tempTriangle.getLocY());
+			
+			xPoints[1]=(int)(tempTriangle.getLocX()-tempTriangle.getEdge()/2);
+			yPoints[1]=(int)(tempTriangle.getLocY()+tempTriangle.getHeight());
+			
+			xPoints[2]=(int)(tempTriangle.getLocX()+tempTriangle.getEdge()/2);
+			yPoints[2]=(int)(tempTriangle.getLocY()+tempTriangle.getHeight());
+		}
+		else if(tempTriangle.getRotate()==1)
+		{
+			xPoints[0]=(int)(tempTriangle.getLocX()-tempTriangle.getEdge()/2);
+			yPoints[0]=	(int)(tempTriangle.getLocY());
+			
+			xPoints[1]=(int)(tempTriangle.getLocX()+tempTriangle.getEdge()/2);
+			yPoints[1]=(int)(tempTriangle.getLocY());
+			
+			xPoints[2]=(int)(tempTriangle.getLocX());
+			yPoints[2]=(int)(tempTriangle.getLocY()+tempTriangle.getHeight());
+		}
+		else
+			System.out.println("THERE IS A PROBLEM IN CODE!!");
+		
+		g.drawPolygon(xPoints, yPoints, 3);
+		
+!!!144041.java!!!	compare(inout o1 : Shape, inout o2 : Shape) : int
+		if(o1.area()==o2.area())
+			return 1;
+		return 0;

@@ -1,0 +1,29 @@
+class Polygon
+!!!133545.java!!!	Polygon()
+		location_X=0;
+		location_Y=0;
+!!!133673.java!!!	Polygon(in tempX : double, in tempY : double)
+		location_X=tempX;
+		location_Y=tempY;
+!!!133801.java!!!	setLocations(in locX : double, in locY : double) : void
+		location_X=locX;
+		location_Y=locY;
+!!!133929.java!!!	setLocX(in Val : double) : void
+		location_X=Val;
+!!!134057.java!!!	setLocY(in Val : double) : void
+		location_Y=Val;
+!!!134185.java!!!	getLocX() : double
+		return location_X;
+!!!134313.java!!!	getLocY() : double
+		return location_Y;
+!!!134441.java!!!	increment() : Shape
+		++location_X;
+		++location_Y;
+		return this;
+!!!134569.java!!!	decrement() : Shape
+		if( !( (location_X-1)<0 | (location_Y-1)<0 ) )
+		{
+			--location_X;
+			--location_Y;
+		}
+		return this;

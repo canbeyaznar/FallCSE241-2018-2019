@@ -1,0 +1,141 @@
+class PolygonVect
+!!!136745.java!!!	PolygonVect()
+		area=0;
+		perimeter=0;
+		pointsOfShapes=null;
+		Color=null;
+!!!136873.java!!!	PolygonVect(inout Rectangle_I : Rectangle)
+		
+		Color=Rectangle_I.getColor();
+		area=Rectangle_I.area();
+		perimeter=Rectangle_I.perimeter();
+		pointsOfShapes = new ArrayList<Polygon>();
+		
+		PolygonVect tempPoint=new PolygonVect();
+		tempPoint.setLocations(Rectangle_I.getLocX(),Rectangle_I.getLocY());
+		pointsOfShapes.add(tempPoint);
+
+		tempPoint=new PolygonVect();
+		tempPoint.setLocations(Rectangle_I.getLocX()+Rectangle_I.getWidth(),Rectangle_I.getLocY());
+		pointsOfShapes.add(tempPoint);
+
+		tempPoint=new PolygonVect();
+		tempPoint.setLocations(Rectangle_I.getLocX()+Rectangle_I.getWidth(),Rectangle_I.getLocY()+Rectangle_I.getHeight());
+		pointsOfShapes.add(tempPoint);
+
+		tempPoint=new PolygonVect();
+		tempPoint.setLocations(Rectangle_I.getLocX(),Rectangle_I.getLocY()+Rectangle_I.getHeight());
+		pointsOfShapes.add(tempPoint);
+		
+		
+!!!137001.java!!!	PolygonVect(inout Circle_I : Circle)
+		
+		double PI=Math.PI;
+		int tX=1,tY=-1;
+		pointsOfShapes = new ArrayList<Polygon>();
+		
+		Color=Circle_I.getColor();
+		area=Circle_I.area();
+		perimeter=Circle_I.perimeter();
+		
+		PolygonVect tempPoint=new PolygonVect();
+		tempPoint.setLocations(Circle_I.getLocX(),Circle_I.getLocY()-Circle_I.getRadius());
+		pointsOfShapes.add(tempPoint);
+		
+		for(int i=1; i<100; i++)
+		{
+			tempPoint=new PolygonVect();
+			tempPoint.setLocations(Circle_I.getLocX()+(tX*Circle_I.getRadius()*Math.sin(i*PI/50)),Circle_I.getLocY()+(tY*Circle_I.getRadius()*Math.cos(i*PI/50)) );
+			pointsOfShapes.add(tempPoint);
+		}
+		
+!!!137129.java!!!	PolygonVect(inout Triangle_I : Triangle)
+		
+		Color=Triangle_I.getColor();
+		area=Triangle_I.area();
+		perimeter=Triangle_I.perimeter();
+		pointsOfShapes = new ArrayList<Polygon>();
+		
+		PolygonVect tempPoint=new PolygonVect();
+		if(Triangle_I.getRotate()==0)
+		{
+			tempPoint.setLocations(Triangle_I.getLocX(),Triangle_I.getLocY());
+			pointsOfShapes.add(tempPoint);
+			
+			tempPoint=new PolygonVect();
+			tempPoint.setLocations(Triangle_I.getLocX()-Triangle_I.getEdge()/2,Triangle_I.getLocY()+Triangle_I.getHeight());
+			pointsOfShapes.add(tempPoint);
+			
+			tempPoint=new PolygonVect();
+			tempPoint.setLocations(Triangle_I.getLocX()+Triangle_I.getEdge()/2,Triangle_I.getLocY()+Triangle_I.getHeight());
+			pointsOfShapes.add(tempPoint);
+		}
+		else if(Triangle_I.getRotate()==1)
+		{
+			tempPoint.setLocations(Triangle_I.getLocX()-Triangle_I.getEdge()/2,Triangle_I.getLocY());
+			pointsOfShapes.add(tempPoint);
+			
+			tempPoint=new PolygonVect();
+			tempPoint.setLocations(Triangle_I.getLocX()+Triangle_I.getEdge()/2,Triangle_I.getLocY());
+			pointsOfShapes.add(tempPoint);
+			
+			tempPoint=new PolygonVect();
+			tempPoint.setLocations(Triangle_I.getLocX(),Triangle_I.getLocY()+Triangle_I.getHeight());
+			pointsOfShapes.add(tempPoint);
+		}
+		else
+			System.out.println("THERE IS A PROBLEM IN CODE!!");
+!!!137257.java!!!	PolygonVect(inout PolygonVect_I : PolygonVect)
+		area=PolygonVect_I.area;
+		perimeter=PolygonVect_I.perimeter;
+		pointsOfShapes=PolygonVect_I.pointsOfShapes;
+		Color=PolygonVect_I.Color;
+!!!137385.java!!!	getColor() : String
+		return Color;
+!!!137513.java!!!	Size() : int
+		return pointsOfShapes.size();
+!!!137641.java!!!	getPoints() : Polygon
+		return pointsOfShapes;
+!!!137769.java!!!	compare(inout o1 : Shape, inout o2 : Shape) : int
+		
+		if(o1.area()==o2.area())
+			return 1;
+		return 0;
+!!!137897.java!!!	area() : double
+		return area;
+!!!138025.java!!!	perimeter() : double
+		return perimeter;
+!!!138153.java!!!	increment() : Shape
+		
+		for(Polygon i : pointsOfShapes)
+			i.increment();
+		
+		return this;
+!!!138281.java!!!	decrement() : Shape
+		
+		for(Polygon i : pointsOfShapes)
+			i.decrement();
+		
+		return this;
+!!!138409.java!!!	draw(inout g : Graphics) : void
+		
+		paintComponent(g);
+!!!138537.java!!!	paintComponent(inout g : Graphics) : void
+		
+		super.paintComponent(g);
+		PolygonVect temp = new PolygonVect(this);
+
+		int size = temp.Size();
+
+		int[] xPoints = new int[size];
+		int[] yPoints = new int[size];
+		
+		ArrayList<Polygon> points= new ArrayList<Polygon>(temp.getPoints());
+		for(int i=0; i<points.size(); ++i)
+		{
+			xPoints[i]=(int)(points.get(i).getLocX());
+			yPoints[i]=(int)(points.get(i).getLocY());
+			
+		}
+		g.drawPolygon(xPoints, yPoints, size);
+		

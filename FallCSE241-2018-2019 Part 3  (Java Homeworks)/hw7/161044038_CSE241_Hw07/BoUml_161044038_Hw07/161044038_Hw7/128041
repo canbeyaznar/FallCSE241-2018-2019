@@ -1,0 +1,35 @@
+format 221
+"161044038_Hw07" // 161044038_Hw07
+  revision 1
+  modified_by 41 "Can Beyaznar"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  java_dir "C:\\Users\\Can Beyaznar\\Desktop\\161044038_CSE241_Hw07\\161044038_Hw07/"
+  package_ref 128169 // myProject
+end

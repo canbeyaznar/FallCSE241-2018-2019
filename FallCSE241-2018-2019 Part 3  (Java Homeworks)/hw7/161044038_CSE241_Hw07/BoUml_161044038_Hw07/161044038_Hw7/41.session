@@ -1,0 +1,13 @@
+window_sizes 1600 837 375 1220 687 104
+
+diagrams
+  active  classdiagram_ref 128041 // myView
+    1220 685 100 A4 72 0
+end
+show_stereotypes
+selected class_ref 128809 // MyMain
+open
+  classview_ref 128041 // src
+  classview_ref 128169 // unknown
+end
+end
